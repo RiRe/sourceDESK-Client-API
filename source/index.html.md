@@ -5,6 +5,9 @@ language_tabs: # must be one of https://git.io/vQNgJ
   - shell
   - php
 
+toc_footers:
+  - <a href='https://sourceway.de/en/imprint?layout=sourcedesk'>Imprint</a>
+
 search: false
 ---
 
