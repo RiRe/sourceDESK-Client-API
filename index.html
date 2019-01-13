@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>API Reference</title>
+    <title>Client API – sourceDESK</title>
 
     <style>
       .highlight table td { padding: 5px; }
@@ -198,10 +198,10 @@
     </style>
     <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
     <link href="stylesheets/print.css" rel="stylesheet" media="print" />
-      <script src="javascripts/all.js"></script>
+      <script src="javascripts/all_nosearch.js"></script>
   </head>
 
-  <body class="index" data-languages="[&quot;shell&quot;,&quot;ruby&quot;,&quot;python&quot;,&quot;javascript&quot;]">
+  <body class="index" data-languages="[&quot;shell&quot;,&quot;php&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -212,121 +212,184 @@
       <img src="images/logo.png" class="logo" alt="Logo" />
         <div class="lang-selector">
               <a href="#" data-language-name="shell">shell</a>
-              <a href="#" data-language-name="ruby">ruby</a>
-              <a href="#" data-language-name="python">python</a>
-              <a href="#" data-language-name="javascript">javascript</a>
+              <a href="#" data-language-name="php">php</a>
         </div>
-        <div class="search">
-          <input type="text" class="search" id="input-search" placeholder="Search">
-        </div>
-        <ul class="search-results"></ul>
       <ul id="toc" class="toc-list-h1">
           <li>
             <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
           </li>
           <li>
-            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
+            <a href="#authentication-amp-request" class="toc-h1 toc-link" data-title="Authentication &amp; Request">Authentication &amp; Request</a>
           </li>
           <li>
-            <a href="#kittens" class="toc-h1 toc-link" data-title="Kittens">Kittens</a>
+            <a href="#products" class="toc-h1 toc-link" data-title="Products">Products</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#get-all-kittens" class="toc-h2 toc-link" data-title="Get All Kittens">Get All Kittens</a>
+                    <a href="#get-contract-details" class="toc-h2 toc-link" data-title="Get contract details">Get contract details</a>
                   </li>
                   <li>
-                    <a href="#get-a-specific-kitten" class="toc-h2 toc-link" data-title="Get a Specific Kitten">Get a Specific Kitten</a>
+                    <a href="#execute-task" class="toc-h2 toc-link" data-title="Execute task">Execute task</a>
                   </li>
                   <li>
-                    <a href="#delete-a-specific-kitten" class="toc-h2 toc-link" data-title="Delete a Specific Kitten">Delete a Specific Kitten</a>
+                    <a href="#set-note-description" class="toc-h2 toc-link" data-title="Set note/description">Set note/description</a>
+                  </li>
+                  <li>
+                    <a href="#order-a-product" class="toc-h2 toc-link" data-title="Order a product">Order a product</a>
+                  </li>
+                  <li>
+                    <a href="#get-cancellation-dates" class="toc-h2 toc-link" data-title="Get cancellation dates">Get cancellation dates</a>
+                  </li>
+                  <li>
+                    <a href="#cancel-a-contract" class="toc-h2 toc-link" data-title="Cancel a contract">Cancel a contract</a>
                   </li>
               </ul>
           </li>
           <li>
-            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
+            <a href="#domains" class="toc-h1 toc-link" data-title="Domains">Domains</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#list-your-domains" class="toc-h2 toc-link" data-title="List your domains">List your domains</a>
+                  </li>
+                  <li>
+                    <a href="#register-a-domain" class="toc-h2 toc-link" data-title="Register a domain">Register a domain</a>
+                  </li>
+                  <li>
+                    <a href="#transfer-a-domain" class="toc-h2 toc-link" data-title="Transfer a domain">Transfer a domain</a>
+                  </li>
+                  <li>
+                    <a href="#edit-a-domain" class="toc-h2 toc-link" data-title="Edit a domain">Edit a domain</a>
+                  </li>
+                  <li>
+                    <a href="#change-domain-owner-trade" class="toc-h2 toc-link" data-title="Change domain owner (trade)">Change domain owner (trade)</a>
+                  </li>
+                  <li>
+                    <a href="#request-authcode" class="toc-h2 toc-link" data-title="Request authcode">Request authcode</a>
+                  </li>
+                  <li>
+                    <a href="#delete-return-a-domain" class="toc-h2 toc-link" data-title="Delete/return a domain">Delete/return a domain</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#dns-zones" class="toc-h1 toc-link" data-title="DNS zones">DNS zones</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#list-your-zones" class="toc-h2 toc-link" data-title="List your zones">List your zones</a>
+                  </li>
+                  <li>
+                    <a href="#get-zone-records" class="toc-h2 toc-link" data-title="Get zone records">Get zone records</a>
+                  </li>
+                  <li>
+                    <a href="#add-a-record" class="toc-h2 toc-link" data-title="Add a record">Add a record</a>
+                  </li>
+                  <li>
+                    <a href="#edit-a-record" class="toc-h2 toc-link" data-title="Edit a record">Edit a record</a>
+                  </li>
+                  <li>
+                    <a href="#delete-a-record" class="toc-h2 toc-link" data-title="Delete a record">Delete a record</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#return-codes-19" class="toc-h1 toc-link" data-title="Return codes">Return codes</a>
           </li>
       </ul>
-        <ul class="toc-footer">
-            <li><a href='#'>Sign Up for a Developer Key</a></li>
-            <li><a href='https://github.com/lord/slate'>Documentation Powered by Slate</a></li>
-        </ul>
     </div>
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
         <h1 id='introduction'>Introduction</h1>
-<p>Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.</p>
+<p>Welcome to the Client API of sourceDESK. You can use this API as client to act with your account, domains and products. Therefore, you need your customer ID and your API key. This documentation covers all available API actions.</p>
 
-<p>We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
-
-<p>This example API documentation page was created with <a href="https://github.com/lord/slate">Slate</a>. Feel free to edit it and use it as a base for your own API&#39;s documentation.</p>
-<h1 id='authentication'>Authentication</h1>
+<p>We provide example codes in Shell and PHP. You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
+<h1 id='authentication-amp-request'>Authentication &amp; Request</h1>
 <blockquote>
-<p>To authorize, use this code:</p>
+<p>To make a request, use this code:</p>
 </blockquote>
-<pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+<span class="nv">$ch</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">(</span><span class="s2">"https://sourceway.de/api/CUSTOMER_ID/API_KEY/domains/list"</span><span class="p">);</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_RETURNTRANSFER</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+<span class="nv">$res</span> <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
+<span class="k">if</span> <span class="p">(</span><span class="nb">curl_errno</span><span class="p">(</span><span class="nv">$ch</span><span class="p">))</span> <span class="p">{</span>
+  <span class="k">die</span><span class="p">(</span><span class="nb">curl_error</span><span class="p">(</span><span class="nv">$ch</span><span class="p">));</span>
+<span class="p">}</span>
 
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
-curl <span class="s2">"api_endpoint_here"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
+<span class="nb">curl_close</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span>
+<span class="nv">$res</span> <span class="o">=</span> <span class="nb">json_decode</span><span class="p">(</span><span class="nv">$res</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
 
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
+<span class="nb">print_r</span><span class="p">(</span><span class="nv">$res</span><span class="p">);</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://sourceway.de/api/CUSTOMER_ID/API_KEY/domains/list"</span>
 </code></pre>
 <blockquote>
-<p>Make sure to replace <code>meowmeowmeow</code> with your API key.</p>
+<p>Make sure to replace <code>CUSTOMER_ID</code> with your customer ID and <code>API_KEY</code> with your API key.</p>
 </blockquote>
 
-<p>Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our <a href="http://example.com/developers">developer portal</a>.</p>
+<p>sourceDESK uses an API key combined with your customer ID to allow access to the API. You can find your API key in your client area or request it at support.</p>
 
-<p>Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
+<p>Parameters can be sent via GET or POST.</p>
 
-<p><code>Authorization: meowmeowmeow</code></p>
+<p>sourceDESK expects for the API key to be included in all API requests to the server in the request.</p>
+
+<p>A request URL is formatted as follows:</p>
+
+<p><code>/api/CUSTOMER_ID/API_KEY/METHOD/ACTION</code></p>
 
 <aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
+Hereby, <code>CUSTOMER_ID</code> is your customer ID, <code>API_KEY</code> is your API key, <code>METHOD</code> is the API method you want to call and <code>action</code> is the task you want to execute.
 </aside>
-<h1 id='kittens'>Kittens</h1><h2 id='get-all-kittens'>Get All Kittens</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<h1 id='products'>Products</h1><h2 id='get-contract-details'>Get contract details</h2><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+<span class="nv">$req</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="s2">"id"</span> <span class="o">=&gt;</span> <span class="mi">123</span><span class="p">,</span>
+<span class="p">];</span>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
+<span class="nv">$ch</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">(</span><span class="s2">"https://sourceway.de/api/CUSTOMER_ID/API_KEY/hosting/info"</span><span class="p">);</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_RETURNTRANSFER</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_POSTFIELDS</span><span class="p">,</span> <span class="nb">http_build_query</span><span class="p">(</span><span class="nv">$req</span><span class="p">));</span>
+<span class="nv">$res</span> <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span>
 
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span><span class="nb">curl_errno</span><span class="p">(</span><span class="nv">$ch</span><span class="p">))</span> <span class="p">{</span>
+  <span class="k">die</span><span class="p">(</span><span class="nb">curl_error</span><span class="p">(</span><span class="nv">$ch</span><span class="p">));</span>
+<span class="p">}</span>
 
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">kittens</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="nx">get</span><span class="p">();</span>
+<span class="nb">curl_close</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span>
+<span class="nv">$res</span> <span class="o">=</span> <span class="nb">json_decode</span><span class="p">(</span><span class="nv">$res</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+
+<span class="nb">print_r</span><span class="p">(</span><span class="nv">$res</span><span class="p">);</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://sourceway.de/api/CUSTOMER_ID/API_KEY/hosting/info?id=123"</span>
 </code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fluffums"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Account query successful."</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Per API erstellt"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"order_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-13 15:45:17"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"product"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">9.99</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"period"</span><span class="p">:</span><span class="w"> </span><span class="s2">"monthly"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"next_invoice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-02-12"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"contract_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1 month"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"notification_period"</span><span class="p">:</span><span class="w"> </span><span class="s2">"14 days"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"cancellation_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0000-00-00"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"login_data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c123"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2gJlrE86vS"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"tasks"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"ChangePassword"</span><span class="p">:</span><span class="w"> </span><span class="s2">"new_password"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"RebootServer"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"AssignDomain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"domain"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This endpoint retrieves all kittens.</p>
-<h3 id='http-request'>HTTP Request</h3>
-<p><code>GET http://example.com/api/kittens</code></p>
+<p>Using this endpoint, you can get details for one of your contracts.</p>
+<h3 id='api-endpoint'>API endpoint</h3>
+<p><code>/hosting/info</code></p>
 <h3 id='query-parameters'>Query Parameters</h3>
 <table><thead>
 <tr>
@@ -336,168 +399,1838 @@ You must replace <code>meowmeowmeow</code> with your personal API key.
 </tr>
 </thead><tbody>
 <tr>
-<td>include_cats</td>
-<td>false</td>
-<td>If set to true, the result will also include cats.</td>
-</tr>
-<tr>
-<td>available</td>
-<td>true</td>
-<td>If set to false, the result will include kittens that have already been adopted.</td>
+<td>id</td>
+<td>-</td>
+<td><strong>Required</strong> The ID of the contract</td>
 </tr>
 </tbody></table>
-
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-<h2 id='get-a-specific-kitten'>Get a Specific Kitten</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-</code></pre>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>This endpoint retrieves a specific kitten.</p>
-
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-<h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters'>URL Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>ID</td>
-<td>The ID of the kitten to retrieve</td>
-</tr>
-</tbody></table>
-<h2 id='delete-a-specific-kitten'>Delete a Specific Kitten</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
-  -X DELETE
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-</code></pre>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"deleted"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">":("</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>This endpoint deletes a specific kitten.</p>
-<h3 id='http-request-3'>HTTP Request</h3>
-<p><code>DELETE http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters-2'>URL Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>ID</td>
-<td>The ID of the kitten to delete</td>
-</tr>
-</tbody></table>
-<h1 id='errors'>Errors</h1>
-<aside class="notice">
-This error section is stored in a separate file in <code>includes/_errors.md</code>. Slate allows you to optionally separate out your docs into many files...just save them to the <code>includes</code> folder and add them to the top of your <code>index.md</code>'s frontmatter. Files are included in the order listed.
-</aside>
-
-<p>The Kittn API uses the following error codes:</p>
+<h3 id='return-codes'>Return codes</h3>
+<p>This are the additional return codes for this action. The global return codes applies.</p>
 
 <table><thead>
 <tr>
-<th>Error Code</th>
+<th>Return Code</th>
 <th>Meaning</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>400</td>
-<td>Bad Request -- Your request is invalid.</td>
+<td>803</td>
+<td>No contract ID specified</td>
 </tr>
 <tr>
-<td>401</td>
-<td>Unauthorized -- Your API key is wrong.</td>
-</tr>
-<tr>
-<td>403</td>
-<td>Forbidden -- The kitten requested is hidden for administrators only.</td>
-</tr>
-<tr>
-<td>404</td>
-<td>Not Found -- The specified kitten could not be found.</td>
-</tr>
-<tr>
-<td>405</td>
-<td>Method Not Allowed -- You tried to access a kitten with an invalid method.</td>
-</tr>
-<tr>
-<td>406</td>
-<td>Not Acceptable -- You requested a format that isn&#39;t json.</td>
-</tr>
-<tr>
-<td>410</td>
-<td>Gone -- The kitten requested has been removed from our servers.</td>
-</tr>
-<tr>
-<td>418</td>
-<td>I&#39;m a teapot.</td>
-</tr>
-<tr>
-<td>429</td>
-<td>Too Many Requests -- You&#39;re requesting too many kittens! Slow down!</td>
-</tr>
-<tr>
-<td>500</td>
-<td>Internal Server Error -- We had a problem with our server. Try again later.</td>
-</tr>
-<tr>
-<td>503</td>
-<td>Service Unavailable -- We&#39;re temporarily offline for maintenance. Please try again later.</td>
+<td>804</td>
+<td>Specified contract is unknown</td>
 </tr>
 </tbody></table>
+<h2 id='execute-task'>Execute task</h2><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+<span class="nv">$req</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="s2">"id"</span> <span class="o">=&gt;</span> <span class="mi">123</span><span class="p">,</span>
+  <span class="s2">"task"</span> <span class="o">=&gt;</span> <span class="s2">"AssignDomain"</span><span class="p">,</span>
+  <span class="s2">"domain"</span> <span class="o">=&gt;</span> <span class="s2">"test.com"</span>
+<span class="p">];</span>
+
+<span class="nv">$ch</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">(</span><span class="s2">"https://sourceway.de/api/CUSTOMER_ID/API_KEY/hosting/task"</span><span class="p">);</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_RETURNTRANSFER</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_POSTFIELDS</span><span class="p">,</span> <span class="nb">http_build_query</span><span class="p">(</span><span class="nv">$req</span><span class="p">));</span>
+<span class="nv">$res</span> <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nb">curl_errno</span><span class="p">(</span><span class="nv">$ch</span><span class="p">))</span> <span class="p">{</span>
+  <span class="k">die</span><span class="p">(</span><span class="nb">curl_error</span><span class="p">(</span><span class="nv">$ch</span><span class="p">));</span>
+<span class="p">}</span>
+
+<span class="nb">curl_close</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span>
+<span class="nv">$res</span> <span class="o">=</span> <span class="nb">json_decode</span><span class="p">(</span><span class="nv">$res</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+
+<span class="nb">print_r</span><span class="p">(</span><span class="nv">$res</span><span class="p">);</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://sourceway.de/api/CUSTOMER_ID/API_KEY/hosting/task?id=123&amp;task=AssignDomain&amp;domain=test.com"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Task executed."</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">Optional</span><span class="w"> </span><span class="err">task</span><span class="w"> </span><span class="err">response</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Using this endpoint, you can execute a task for a contract. You can find the available tasks and the required parameters in order to execute it with the endpoint <code>hosting/info</code> described before, using the element <code>tasks</code>.</p>
+<h3 id='api-endpoint-2'>API endpoint</h3>
+<p><code>/hosting/task</code></p>
+<h3 id='query-parameters-2'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>-</td>
+<td><strong>Required</strong> The ID of the contract</td>
+</tr>
+<tr>
+<td>task</td>
+<td>-</td>
+<td><strong>Required</strong> The task to execute</td>
+</tr>
+</tbody></table>
+
+<p>There can be other query parameters according to the task being executed.</p>
+<h3 id='return-codes-2'>Return codes</h3>
+<p>This are the additional return codes for this action. The global return codes applies.</p>
+
+<table><thead>
+<tr>
+<th>Return Code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>803</td>
+<td>No contract ID specified</td>
+</tr>
+<tr>
+<td>804</td>
+<td>Specified contract is unknown</td>
+</tr>
+<tr>
+<td>805</td>
+<td>No task specified</td>
+</tr>
+<tr>
+<td>806</td>
+<td>Invalid task specified</td>
+</tr>
+<tr>
+<td>807</td>
+<td>Required task parameter is missing</td>
+</tr>
+</tbody></table>
+
+<p>The executed task can specify more error codes. Please see the corresponding <code>message</code> returned to get more details.</p>
+<h2 id='set-note-description'>Set note/description</h2><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+<span class="nv">$req</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="s2">"id"</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="s2">"note"</span> <span class="o">=&gt;</span> <span class="s2">"Per API bestellt"</span><span class="p">,</span>
+<span class="p">];</span>
+
+<span class="nv">$ch</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">(</span><span class="s2">"https://sourceway.de/api/CUSTOMER_ID/API_KEY/hosting/set"</span><span class="p">);</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_RETURNTRANSFER</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_POSTFIELDS</span><span class="p">,</span> <span class="nb">http_build_query</span><span class="p">(</span><span class="nv">$req</span><span class="p">));</span>
+<span class="nv">$res</span> <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nb">curl_errno</span><span class="p">(</span><span class="nv">$ch</span><span class="p">))</span> <span class="p">{</span>
+  <span class="k">die</span><span class="p">(</span><span class="nb">curl_error</span><span class="p">(</span><span class="nv">$ch</span><span class="p">));</span>
+<span class="p">}</span>
+
+<span class="nb">curl_close</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span>
+<span class="nv">$res</span> <span class="o">=</span> <span class="nb">json_decode</span><span class="p">(</span><span class="nv">$res</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+
+<span class="nb">print_r</span><span class="p">(</span><span class="nv">$res</span><span class="p">);</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://sourceway.de/api/CUSTOMER_ID/API_KEY/hosting/set?id=1&amp;note=Per+API+bestellt"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Description set successful."</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Using this endpoint, you can update a note for a existing contract.</p>
+<h3 id='api-endpoint-3'>API endpoint</h3>
+<p><code>/hosting/set</code></p>
+<h3 id='query-parameters-3'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>-</td>
+<td><strong>Required</strong> The ID of the contract</td>
+</tr>
+<tr>
+<td>note</td>
+<td>&quot;&quot;</td>
+<td>The note to set for the contract</td>
+</tr>
+</tbody></table>
+<h3 id='return-codes-3'>Return codes</h3>
+<p>This are the additional return codes for this action. The global return codes applies.</p>
+
+<table><thead>
+<tr>
+<th>Return Code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>803</td>
+<td>No contract ID specified</td>
+</tr>
+<tr>
+<td>804</td>
+<td>Specified contract is unknown</td>
+</tr>
+</tbody></table>
+<h2 id='order-a-product'>Order a product</h2><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+<span class="nv">$req</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="s2">"id"</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="s2">"note"</span> <span class="o">=&gt;</span> <span class="s2">"Per API bestellt"</span><span class="p">,</span>
+  <span class="s2">"async"</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
+<span class="p">];</span>
+
+<span class="nv">$ch</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">(</span><span class="s2">"https://sourceway.de/api/CUSTOMER_ID/API_KEY/hosting/order"</span><span class="p">);</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_RETURNTRANSFER</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_POSTFIELDS</span><span class="p">,</span> <span class="nb">http_build_query</span><span class="p">(</span><span class="nv">$req</span><span class="p">));</span>
+<span class="nv">$res</span> <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nb">curl_errno</span><span class="p">(</span><span class="nv">$ch</span><span class="p">))</span> <span class="p">{</span>
+  <span class="k">die</span><span class="p">(</span><span class="nb">curl_error</span><span class="p">(</span><span class="nv">$ch</span><span class="p">));</span>
+<span class="p">}</span>
+
+<span class="nb">curl_close</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span>
+<span class="nv">$res</span> <span class="o">=</span> <span class="nb">json_decode</span><span class="p">(</span><span class="nv">$res</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+
+<span class="nb">print_r</span><span class="p">(</span><span class="nv">$res</span><span class="p">);</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://sourceway.de/api/CUSTOMER_ID/API_KEY/hosting/order?id=1&amp;note=Per+API+bestellt&amp;async=1"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Product order successful."</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c123"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2gJlrE86vS"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Using this endpoint, you can order a new product.</p>
+<h3 id='api-endpoint-4'>API endpoint</h3>
+<p><code>/hosting/order</code></p>
+<h3 id='query-parameters-4'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>-</td>
+<td><strong>Required</strong> The ID of the product to order</td>
+</tr>
+<tr>
+<td>note</td>
+<td>&quot;&quot;</td>
+<td>A note to set for the contract</td>
+</tr>
+<tr>
+<td>async</td>
+<td>false</td>
+<td>Create the contract in the background - if set to <code>true</code>, the request is faster, but you will not get the credentials immediately</td>
+</tr>
+</tbody></table>
+<h3 id='return-codes-4'>Return codes</h3>
+<p>This are the additional return codes for this action. The global return codes applies.</p>
+
+<table><thead>
+<tr>
+<th>Return Code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>803</td>
+<td>No product ID specified</td>
+</tr>
+<tr>
+<td>804</td>
+<td>Specified product is unknown</td>
+</tr>
+<tr>
+<td>805</td>
+<td>Not enough credit for this order</td>
+</tr>
+</tbody></table>
+<h2 id='get-cancellation-dates'>Get cancellation dates</h2><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+<span class="nv">$req</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="s2">"id"</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
+<span class="p">];</span>
+
+<span class="nv">$ch</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">(</span><span class="s2">"https://sourceway.de/api/CUSTOMER_ID/API_KEY/hosting/cancel"</span><span class="p">);</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_RETURNTRANSFER</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_POSTFIELDS</span><span class="p">,</span> <span class="nb">http_build_query</span><span class="p">(</span><span class="nv">$req</span><span class="p">));</span>
+<span class="nv">$res</span> <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nb">curl_errno</span><span class="p">(</span><span class="nv">$ch</span><span class="p">))</span> <span class="p">{</span>
+  <span class="k">die</span><span class="p">(</span><span class="nb">curl_error</span><span class="p">(</span><span class="nv">$ch</span><span class="p">));</span>
+<span class="p">}</span>
+
+<span class="nb">curl_close</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span>
+<span class="nv">$res</span> <span class="o">=</span> <span class="nb">json_decode</span><span class="p">(</span><span class="nv">$res</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+
+<span class="nb">print_r</span><span class="p">(</span><span class="nv">$res</span><span class="p">);</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://sourceway.de/api/CUSTOMER_ID/API_KEY/hosting/cancel?id=1"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cancellation date query successful."</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"dates"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"2019-02-12"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"2019-03-12"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"2019-04-12"</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Using this endpoint, you can get the possible cancellation dates for a contract.</p>
+<h3 id='api-endpoint-5'>API endpoint</h3>
+<p><code>/hosting/cancel</code></p>
+<h3 id='query-parameters-5'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>-</td>
+<td><strong>Required</strong> The ID of the contract</td>
+</tr>
+</tbody></table>
+<h3 id='return-codes-5'>Return codes</h3>
+<p>This are the additional return codes for this action. The global return codes applies.</p>
+
+<table><thead>
+<tr>
+<th>Return Code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>803</td>
+<td>No contract ID specified</td>
+</tr>
+<tr>
+<td>804</td>
+<td>Specified contract is unknown</td>
+</tr>
+<tr>
+<td>805</td>
+<td>No cancellation is possible (product without recurring costs)</td>
+</tr>
+</tbody></table>
+<h2 id='cancel-a-contract'>Cancel a contract</h2><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+<span class="nv">$req</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="s2">"id"</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="s2">"date"</span> <span class="o">=&gt;</span> <span class="s2">"2019-02-12"</span><span class="p">,</span>
+<span class="p">];</span>
+
+<span class="nv">$ch</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">(</span><span class="s2">"https://sourceway.de/api/CUSTOMER_ID/API_KEY/hosting/cancel"</span><span class="p">);</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_RETURNTRANSFER</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_POSTFIELDS</span><span class="p">,</span> <span class="nb">http_build_query</span><span class="p">(</span><span class="nv">$req</span><span class="p">));</span>
+<span class="nv">$res</span> <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nb">curl_errno</span><span class="p">(</span><span class="nv">$ch</span><span class="p">))</span> <span class="p">{</span>
+  <span class="k">die</span><span class="p">(</span><span class="nb">curl_error</span><span class="p">(</span><span class="nv">$ch</span><span class="p">));</span>
+<span class="p">}</span>
+
+<span class="nb">curl_close</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span>
+<span class="nv">$res</span> <span class="o">=</span> <span class="nb">json_decode</span><span class="p">(</span><span class="nv">$res</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+
+<span class="nb">print_r</span><span class="p">(</span><span class="nv">$res</span><span class="p">);</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://sourceway.de/api/CUSTOMER_ID/API_KEY/hosting/cancel?id=1&amp;date=2019-02-12"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cancellation date set successful."</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-02-12"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Using this endpoint, you can set the cancellation date for a contract. Please make sure that you retrieve the possible dates first, as only valid dates are accepted.</p>
+
+<aside class="notice">
+In order to revoke an existing contract cancellation, please submit the date <code>0000-00-00</code>.
+</aside>
+<h3 id='api-endpoint-6'>API endpoint</h3>
+<p><code>/hosting/cancel</code></p>
+<h3 id='query-parameters-6'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>-</td>
+<td><strong>Required</strong> The ID of the contract</td>
+</tr>
+<tr>
+<td>date</td>
+<td>-</td>
+<td><strong>Required</strong> Date of cancellation</td>
+</tr>
+</tbody></table>
+<h3 id='return-codes-6'>Return codes</h3>
+<p>This are the additional return codes for this action. The global return codes applies.</p>
+
+<table><thead>
+<tr>
+<th>Return Code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>803</td>
+<td>No contract ID specified</td>
+</tr>
+<tr>
+<td>804</td>
+<td>Specified contract is unknown</td>
+</tr>
+<tr>
+<td>805</td>
+<td>No cancellation is possible (product without recurring costs)</td>
+</tr>
+<tr>
+<td>806</td>
+<td>Provided cancellation date is invalid</td>
+</tr>
+</tbody></table>
+<h1 id='domains'>Domains</h1><h2 id='list-your-domains'>List your domains</h2><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+<span class="nv">$ch</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">(</span><span class="s2">"https://sourceway.de/api/CUSTOMER_ID/API_KEY/domain/list"</span><span class="p">);</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_RETURNTRANSFER</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+<span class="nv">$res</span> <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nb">curl_errno</span><span class="p">(</span><span class="nv">$ch</span><span class="p">))</span> <span class="p">{</span>
+  <span class="k">die</span><span class="p">(</span><span class="nb">curl_error</span><span class="p">(</span><span class="nv">$ch</span><span class="p">));</span>
+<span class="p">}</span>
+
+<span class="nb">curl_close</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span>
+<span class="nv">$res</span> <span class="o">=</span> <span class="nb">json_decode</span><span class="p">(</span><span class="nv">$res</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+
+<span class="nb">print_r</span><span class="p">(</span><span class="nv">$res</span><span class="p">);</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://sourceway.de/api/CUSTOMER_ID/API_KEY/domain/list"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Domains fetched."</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"domain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example.com"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"recurring"</span><span class="p">:</span><span class="w"> </span><span class="mf">7.99</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"created"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-13"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"expiration"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-01-12"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"auto_renew"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"transfer_lock"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"privacy"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"privacy_price"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"REG_OK"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"last_sync"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-13 16:06:56"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"trade"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"owner"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"firstname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"lastname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Doe"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"company"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"street"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Example street 1"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"postcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Example city"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"telephone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0019289999"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"telefax"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0019289998"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"john.doe@example.com"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"remarks"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"admin"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"firstname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"lastname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Doe"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"company"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"street"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Example street 1"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"postcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Example city"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"telephone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0019289999"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"telefax"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0019289998"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"john.doe@example.com"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"remarks"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"tech"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"firstname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"lastname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Doe"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"company"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"street"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Example street 1"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"postcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Example city"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"telephone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0019289999"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"telefax"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0019289998"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"john.doe@example.com"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"remarks"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"zone"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"firstname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"lastname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Doe"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"company"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"street"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Example street 1"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"postcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Example city"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"telephone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0019289999"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"telefax"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0019289998"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"john.doe@example.com"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"remarks"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"ns"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"ns1.sourceway.de"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"ns2.sourceway.de"</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint is used to get listed all your domains.</p>
+<h3 id='api-endpoint-7'>API endpoint</h3>
+<p><code>/domain/list</code></p>
+<h3 id='query-parameters-7'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>domain</td>
+<td>-</td>
+<td>Filter by domain name (wildcard)</td>
+</tr>
+</tbody></table>
+<h3 id='return-codes-7'>Return codes</h3>
+<p>The global return codes applies.</p>
+<h2 id='register-a-domain'>Register a domain</h2><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+<span class="nv">$req</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="s2">"domain"</span> <span class="o">=&gt;</span> <span class="s2">"example.com"</span><span class="p">,</span>
+  <span class="s2">"owner_firstname"</span> <span class="o">=&gt;</span> <span class="s2">"John"</span><span class="p">,</span>
+  <span class="s2">"owner_lastname"</span> <span class="o">=&gt;</span> <span class="s2">"Doe"</span><span class="p">,</span>
+  <span class="s2">"owner_company"</span> <span class="o">=&gt;</span> <span class="s2">""</span><span class="p">,</span>
+  <span class="s2">"owner_street"</span> <span class="o">=&gt;</span> <span class="s2">"Example street 1"</span><span class="p">,</span>
+  <span class="s2">"owner_country"</span> <span class="o">=&gt;</span> <span class="s2">"US"</span><span class="p">,</span>
+  <span class="s2">"owner_postcode"</span> <span class="o">=&gt;</span> <span class="s2">"12345"</span><span class="p">,</span>
+  <span class="s2">"owner_city"</span> <span class="o">=&gt;</span> <span class="s2">"Example city"</span><span class="p">,</span>
+  <span class="s2">"owner_telephone"</span> <span class="o">=&gt;</span> <span class="s2">"0019289999"</span><span class="p">,</span>
+  <span class="s2">"owner_telefax"</span> <span class="o">=&gt;</span> <span class="s2">"0019289998"</span><span class="p">,</span>
+  <span class="s2">"owner_email"</span> <span class="o">=&gt;</span> <span class="s2">"john.doe@example.com"</span><span class="p">,</span>
+  <span class="s2">"admin_firstname"</span> <span class="o">=&gt;</span> <span class="s2">"John"</span><span class="p">,</span>
+  <span class="s2">"admin_lastname"</span> <span class="o">=&gt;</span> <span class="s2">"Doe"</span><span class="p">,</span>
+  <span class="s2">"admin_company"</span> <span class="o">=&gt;</span> <span class="s2">""</span><span class="p">,</span>
+  <span class="s2">"admin_street"</span> <span class="o">=&gt;</span> <span class="s2">"Example street 1"</span><span class="p">,</span>
+  <span class="s2">"admin_country"</span> <span class="o">=&gt;</span> <span class="s2">"US"</span><span class="p">,</span>
+  <span class="s2">"admin_postcode"</span> <span class="o">=&gt;</span> <span class="s2">"12345"</span><span class="p">,</span>
+  <span class="s2">"admin_city"</span> <span class="o">=&gt;</span> <span class="s2">"Example city"</span><span class="p">,</span>
+  <span class="s2">"admin_telephone"</span> <span class="o">=&gt;</span> <span class="s2">"0019289999"</span><span class="p">,</span>
+  <span class="s2">"admin_telefax"</span> <span class="o">=&gt;</span> <span class="s2">"0019289998"</span><span class="p">,</span>
+  <span class="s2">"admin_email"</span> <span class="o">=&gt;</span> <span class="s2">"john.doe@example.com"</span><span class="p">,</span>
+  <span class="s2">"tech_firstname"</span> <span class="o">=&gt;</span> <span class="s2">"John"</span><span class="p">,</span>
+  <span class="s2">"tech_lastname"</span> <span class="o">=&gt;</span> <span class="s2">"Doe"</span><span class="p">,</span>
+  <span class="s2">"tech_company"</span> <span class="o">=&gt;</span> <span class="s2">""</span><span class="p">,</span>
+  <span class="s2">"tech_street"</span> <span class="o">=&gt;</span> <span class="s2">"Example street 1"</span><span class="p">,</span>
+  <span class="s2">"tech_country"</span> <span class="o">=&gt;</span> <span class="s2">"US"</span><span class="p">,</span>
+  <span class="s2">"tech_postcode"</span> <span class="o">=&gt;</span> <span class="s2">"12345"</span><span class="p">,</span>
+  <span class="s2">"tech_city"</span> <span class="o">=&gt;</span> <span class="s2">"Example city"</span><span class="p">,</span>
+  <span class="s2">"tech_telephone"</span> <span class="o">=&gt;</span> <span class="s2">"0019289999"</span><span class="p">,</span>
+  <span class="s2">"tech_telefax"</span> <span class="o">=&gt;</span> <span class="s2">"0019289998"</span><span class="p">,</span>
+  <span class="s2">"tech_email"</span> <span class="o">=&gt;</span> <span class="s2">"john.doe@example.com"</span><span class="p">,</span>
+  <span class="s2">"zone_firstname"</span> <span class="o">=&gt;</span> <span class="s2">"John"</span><span class="p">,</span>
+  <span class="s2">"zone_lastname"</span> <span class="o">=&gt;</span> <span class="s2">"Doe"</span><span class="p">,</span>
+  <span class="s2">"zone_company"</span> <span class="o">=&gt;</span> <span class="s2">""</span><span class="p">,</span>
+  <span class="s2">"zone_street"</span> <span class="o">=&gt;</span> <span class="s2">"Example street 1"</span><span class="p">,</span>
+  <span class="s2">"zone_country"</span> <span class="o">=&gt;</span> <span class="s2">"US"</span><span class="p">,</span>
+  <span class="s2">"zone_postcode"</span> <span class="o">=&gt;</span> <span class="s2">"12345"</span><span class="p">,</span>
+  <span class="s2">"zone_city"</span> <span class="o">=&gt;</span> <span class="s2">"Example city"</span><span class="p">,</span>
+  <span class="s2">"zone_telephone"</span> <span class="o">=&gt;</span> <span class="s2">"0019289999"</span><span class="p">,</span>
+  <span class="s2">"zone_telefax"</span> <span class="o">=&gt;</span> <span class="s2">"0019289998"</span><span class="p">,</span>
+  <span class="s2">"zone_email"</span> <span class="o">=&gt;</span> <span class="s2">"john.doe@example.com"</span><span class="p">,</span>
+  <span class="s2">"ns1"</span> <span class="o">=&gt;</span> <span class="s2">"ns1.sourceway.de"</span><span class="p">,</span>
+  <span class="s2">"ns2"</span> <span class="o">=&gt;</span> <span class="s2">"ns2.sourceway.de"</span><span class="p">,</span>
+  <span class="s2">"ip"</span> <span class="o">=&gt;</span> <span class="s2">"8.8.8.8"</span><span class="p">,</span>
+  <span class="s2">"async"</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
+<span class="p">];</span>
+
+<span class="nv">$ch</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">(</span><span class="s2">"https://sourceway.de/api/CUSTOMER_ID/API_KEY/domain/register"</span><span class="p">);</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_RETURNTRANSFER</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_POSTFIELDS</span><span class="p">,</span> <span class="nb">http_build_query</span><span class="p">(</span><span class="nv">$req</span><span class="p">));</span>
+<span class="nv">$res</span> <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nb">curl_errno</span><span class="p">(</span><span class="nv">$ch</span><span class="p">))</span> <span class="p">{</span>
+  <span class="k">die</span><span class="p">(</span><span class="nb">curl_error</span><span class="p">(</span><span class="nv">$ch</span><span class="p">));</span>
+<span class="p">}</span>
+
+<span class="nb">curl_close</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span>
+<span class="nv">$res</span> <span class="o">=</span> <span class="nb">json_decode</span><span class="p">(</span><span class="nv">$res</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+
+<span class="nb">print_r</span><span class="p">(</span><span class="nv">$res</span><span class="p">);</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://sourceway.de/api/CUSTOMER_ID/API_KEY/domain/register?domain=example.com&amp;owner_firstname=John&amp;owner_lastname=Doe&amp;owner_company=&amp;owner_street=Example+street+1&amp;owner_country=US&amp;owner_postcode=12345&amp;owner_city=Example+city&amp;owner_telephone=0019289999&amp;owner_telefax=0019289998&amp;owner_email=john.doe%40example.com&amp;admin_firstname=John&amp;admin_lastname=Doe&amp;admin_company=&amp;admin_street=Example+street+1&amp;admin_country=US&amp;admin_postcode=12345&amp;admin_city=Example+city&amp;admin_telephone=0019289999&amp;admin_telefax=0019289998&amp;admin_email=john.doe%40example.com&amp;tech_firstname=John&amp;tech_lastname=Doe&amp;tech_company=&amp;tech_street=Example+street+1&amp;tech_country=US&amp;tech_postcode=12345&amp;tech_city=Example+city&amp;tech_telephone=0019289999&amp;tech_telefax=0019289998&amp;tech_email=john.doe%40example.com&amp;zone_firstname=John&amp;zone_lastname=Doe&amp;zone_company=&amp;zone_street=Example+street+1&amp;zone_country=US&amp;zone_postcode=12345&amp;zone_city=Example+city&amp;zone_telephone=0019289999&amp;zone_telefax=0019289998&amp;zone_email=john.doe%40example.com&amp;ns1=ns1.sourceway.de&amp;ns2=ns2.sourceway.de&amp;ip=8.8.8.8&amp;async=1"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Domain registration successful."</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Using this endpoint, you can register a domain. Please make sure that the domain is available first.</p>
+<h3 id='api-endpoint-8'>API endpoint</h3>
+<p><code>/domain/register</code></p>
+<h3 id='query-parameters-8'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>domain</td>
+<td>-</td>
+<td><strong>Required</strong> The domain to register</td>
+</tr>
+<tr>
+<td>owner_*</td>
+<td>-</td>
+<td><strong>Required</strong> The owner contact data - see request for details</td>
+</tr>
+<tr>
+<td>admin_*</td>
+<td>-</td>
+<td><strong>Required</strong> The admin contact data - see request for details</td>
+</tr>
+<tr>
+<td>tech_*</td>
+<td>Provider data</td>
+<td>The tech contact data - needs special permission</td>
+</tr>
+<tr>
+<td>zone_*</td>
+<td>Provider data</td>
+<td>The zone contact data - needs special permission</td>
+</tr>
+<tr>
+<td>ns1..5</td>
+<td>-</td>
+<td><strong>At least first 2 required</strong> The nameserver hostnames to use</td>
+</tr>
+<tr>
+<td>ip</td>
+<td>-</td>
+<td><strong>Required if provider nameservers are used</strong> The standard IP address to create DNS zone</td>
+</tr>
+<tr>
+<td>async</td>
+<td>false</td>
+<td>Set to <code>true</code> in order to execute registration in the background - faster response</td>
+</tr>
+</tbody></table>
+<h3 id='return-codes-8'>Return codes</h3>
+<p>This are the additional return codes for this action. The global return codes applies.</p>
+
+<table><thead>
+<tr>
+<th>Return Code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>803</td>
+<td>No domain name specified</td>
+</tr>
+<tr>
+<td>804</td>
+<td>Invalid domain name specified</td>
+</tr>
+<tr>
+<td>805</td>
+<td>TLD not supported</td>
+</tr>
+<tr>
+<td>806</td>
+<td>Domain availibility status can not be fetched</td>
+</tr>
+<tr>
+<td>807</td>
+<td>Domain not available</td>
+</tr>
+<tr>
+<td>808</td>
+<td>Not enough credit</td>
+</tr>
+<tr>
+<td>809</td>
+<td>Contact details missing (more information in <code>message</code> element)</td>
+</tr>
+<tr>
+<td>810</td>
+<td>Nameserver missing</td>
+</tr>
+<tr>
+<td>811</td>
+<td>Invalid IP address</td>
+</tr>
+<tr>
+<td>812</td>
+<td>Domain registration already in progress</td>
+</tr>
+<tr>
+<td>813</td>
+<td>Domain registration failed</td>
+</tr>
+</tbody></table>
+<h2 id='transfer-a-domain'>Transfer a domain</h2><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+<span class="nv">$req</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="s2">"domain"</span> <span class="o">=&gt;</span> <span class="s2">"example.com"</span><span class="p">,</span>
+  <span class="s2">"password"</span> <span class="o">=&gt;</span> <span class="s2">"AuthCode"</span><span class="p">,</span>
+  <span class="s2">"owner_firstname"</span> <span class="o">=&gt;</span> <span class="s2">"John"</span><span class="p">,</span>
+  <span class="s2">"owner_lastname"</span> <span class="o">=&gt;</span> <span class="s2">"Doe"</span><span class="p">,</span>
+  <span class="s2">"owner_company"</span> <span class="o">=&gt;</span> <span class="s2">""</span><span class="p">,</span>
+  <span class="s2">"owner_street"</span> <span class="o">=&gt;</span> <span class="s2">"Example street 1"</span><span class="p">,</span>
+  <span class="s2">"owner_country"</span> <span class="o">=&gt;</span> <span class="s2">"US"</span><span class="p">,</span>
+  <span class="s2">"owner_postcode"</span> <span class="o">=&gt;</span> <span class="s2">"12345"</span><span class="p">,</span>
+  <span class="s2">"owner_city"</span> <span class="o">=&gt;</span> <span class="s2">"Example city"</span><span class="p">,</span>
+  <span class="s2">"owner_telephone"</span> <span class="o">=&gt;</span> <span class="s2">"0019289999"</span><span class="p">,</span>
+  <span class="s2">"owner_telefax"</span> <span class="o">=&gt;</span> <span class="s2">"0019289998"</span><span class="p">,</span>
+  <span class="s2">"owner_email"</span> <span class="o">=&gt;</span> <span class="s2">"john.doe@example.com"</span><span class="p">,</span>
+  <span class="s2">"admin_firstname"</span> <span class="o">=&gt;</span> <span class="s2">"John"</span><span class="p">,</span>
+  <span class="s2">"admin_lastname"</span> <span class="o">=&gt;</span> <span class="s2">"Doe"</span><span class="p">,</span>
+  <span class="s2">"admin_company"</span> <span class="o">=&gt;</span> <span class="s2">""</span><span class="p">,</span>
+  <span class="s2">"admin_street"</span> <span class="o">=&gt;</span> <span class="s2">"Example street 1"</span><span class="p">,</span>
+  <span class="s2">"admin_country"</span> <span class="o">=&gt;</span> <span class="s2">"US"</span><span class="p">,</span>
+  <span class="s2">"admin_postcode"</span> <span class="o">=&gt;</span> <span class="s2">"12345"</span><span class="p">,</span>
+  <span class="s2">"admin_city"</span> <span class="o">=&gt;</span> <span class="s2">"Example city"</span><span class="p">,</span>
+  <span class="s2">"admin_telephone"</span> <span class="o">=&gt;</span> <span class="s2">"0019289999"</span><span class="p">,</span>
+  <span class="s2">"admin_telefax"</span> <span class="o">=&gt;</span> <span class="s2">"0019289998"</span><span class="p">,</span>
+  <span class="s2">"admin_email"</span> <span class="o">=&gt;</span> <span class="s2">"john.doe@example.com"</span><span class="p">,</span>
+  <span class="s2">"tech_firstname"</span> <span class="o">=&gt;</span> <span class="s2">"John"</span><span class="p">,</span>
+  <span class="s2">"tech_lastname"</span> <span class="o">=&gt;</span> <span class="s2">"Doe"</span><span class="p">,</span>
+  <span class="s2">"tech_company"</span> <span class="o">=&gt;</span> <span class="s2">""</span><span class="p">,</span>
+  <span class="s2">"tech_street"</span> <span class="o">=&gt;</span> <span class="s2">"Example street 1"</span><span class="p">,</span>
+  <span class="s2">"tech_country"</span> <span class="o">=&gt;</span> <span class="s2">"US"</span><span class="p">,</span>
+  <span class="s2">"tech_postcode"</span> <span class="o">=&gt;</span> <span class="s2">"12345"</span><span class="p">,</span>
+  <span class="s2">"tech_city"</span> <span class="o">=&gt;</span> <span class="s2">"Example city"</span><span class="p">,</span>
+  <span class="s2">"tech_telephone"</span> <span class="o">=&gt;</span> <span class="s2">"0019289999"</span><span class="p">,</span>
+  <span class="s2">"tech_telefax"</span> <span class="o">=&gt;</span> <span class="s2">"0019289998"</span><span class="p">,</span>
+  <span class="s2">"tech_email"</span> <span class="o">=&gt;</span> <span class="s2">"john.doe@example.com"</span><span class="p">,</span>
+  <span class="s2">"zone_firstname"</span> <span class="o">=&gt;</span> <span class="s2">"John"</span><span class="p">,</span>
+  <span class="s2">"zone_lastname"</span> <span class="o">=&gt;</span> <span class="s2">"Doe"</span><span class="p">,</span>
+  <span class="s2">"zone_company"</span> <span class="o">=&gt;</span> <span class="s2">""</span><span class="p">,</span>
+  <span class="s2">"zone_street"</span> <span class="o">=&gt;</span> <span class="s2">"Example street 1"</span><span class="p">,</span>
+  <span class="s2">"zone_country"</span> <span class="o">=&gt;</span> <span class="s2">"US"</span><span class="p">,</span>
+  <span class="s2">"zone_postcode"</span> <span class="o">=&gt;</span> <span class="s2">"12345"</span><span class="p">,</span>
+  <span class="s2">"zone_city"</span> <span class="o">=&gt;</span> <span class="s2">"Example city"</span><span class="p">,</span>
+  <span class="s2">"zone_telephone"</span> <span class="o">=&gt;</span> <span class="s2">"0019289999"</span><span class="p">,</span>
+  <span class="s2">"zone_telefax"</span> <span class="o">=&gt;</span> <span class="s2">"0019289998"</span><span class="p">,</span>
+  <span class="s2">"zone_email"</span> <span class="o">=&gt;</span> <span class="s2">"john.doe@example.com"</span><span class="p">,</span>
+  <span class="s2">"ns1"</span> <span class="o">=&gt;</span> <span class="s2">"ns1.sourceway.de"</span><span class="p">,</span>
+  <span class="s2">"ns2"</span> <span class="o">=&gt;</span> <span class="s2">"ns2.sourceway.de"</span><span class="p">,</span>
+  <span class="s2">"ip"</span> <span class="o">=&gt;</span> <span class="s2">"8.8.8.8"</span><span class="p">,</span>
+  <span class="s2">"async"</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
+<span class="p">];</span>
+
+<span class="nv">$ch</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">(</span><span class="s2">"https://sourceway.de/api/CUSTOMER_ID/API_KEY/domain/transfer"</span><span class="p">);</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_RETURNTRANSFER</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_POSTFIELDS</span><span class="p">,</span> <span class="nb">http_build_query</span><span class="p">(</span><span class="nv">$req</span><span class="p">));</span>
+<span class="nv">$res</span> <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nb">curl_errno</span><span class="p">(</span><span class="nv">$ch</span><span class="p">))</span> <span class="p">{</span>
+  <span class="k">die</span><span class="p">(</span><span class="nb">curl_error</span><span class="p">(</span><span class="nv">$ch</span><span class="p">));</span>
+<span class="p">}</span>
+
+<span class="nb">curl_close</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span>
+<span class="nv">$res</span> <span class="o">=</span> <span class="nb">json_decode</span><span class="p">(</span><span class="nv">$res</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+
+<span class="nb">print_r</span><span class="p">(</span><span class="nv">$res</span><span class="p">);</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://sourceway.de/api/CUSTOMER_ID/API_KEY/domain/transfer?domain=example.com&amp;password=AuthCode&amp;owner_firstname=John&amp;owner_lastname=Doe&amp;owner_company=&amp;owner_street=Example+street+1&amp;owner_country=US&amp;owner_postcode=12345&amp;owner_city=Example+city&amp;owner_telephone=0019289999&amp;owner_telefax=0019289998&amp;owner_email=john.doe%40example.com&amp;admin_firstname=John&amp;admin_lastname=Doe&amp;admin_company=&amp;admin_street=Example+street+1&amp;admin_country=US&amp;admin_postcode=12345&amp;admin_city=Example+city&amp;admin_telephone=0019289999&amp;admin_telefax=0019289998&amp;admin_email=john.doe%40example.com&amp;tech_firstname=John&amp;tech_lastname=Doe&amp;tech_company=&amp;tech_street=Example+street+1&amp;tech_country=US&amp;tech_postcode=12345&amp;tech_city=Example+city&amp;tech_telephone=0019289999&amp;tech_telefax=0019289998&amp;tech_email=john.doe%40example.com&amp;zone_firstname=John&amp;zone_lastname=Doe&amp;zone_company=&amp;zone_street=Example+street+1&amp;zone_country=US&amp;zone_postcode=12345&amp;zone_city=Example+city&amp;zone_telephone=0019289999&amp;zone_telefax=0019289998&amp;zone_email=john.doe%40example.com&amp;ns1=ns1.sourceway.de&amp;ns2=ns2.sourceway.de&amp;ip=8.8.8.8&amp;async=1"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Domain transfer successful."</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Using this endpoint, you can transfer a domain. The request is identical to the <code>register</code> request, except requiring the parameter <code>password</code>.</p>
+<h3 id='api-endpoint-9'>API endpoint</h3>
+<p><code>/domain/transfer</code></p>
+<h3 id='query-parameters-9'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>domain</td>
+<td>-</td>
+<td><strong>Required</strong> The domain to transfer</td>
+</tr>
+<tr>
+<td>password</td>
+<td>-</td>
+<td><strong>Required</strong> The AuthCode to transfer the domain</td>
+</tr>
+<tr>
+<td>owner_*</td>
+<td>-</td>
+<td><strong>Required</strong> The owner contact data - see request for details</td>
+</tr>
+<tr>
+<td>admin_*</td>
+<td>-</td>
+<td><strong>Required</strong> The admin contact data - see request for details</td>
+</tr>
+<tr>
+<td>tech_*</td>
+<td>Provider data</td>
+<td>The tech contact data - needs special permission</td>
+</tr>
+<tr>
+<td>zone_*</td>
+<td>Provider data</td>
+<td>The zone contact data - needs special permission</td>
+</tr>
+<tr>
+<td>ns1..5</td>
+<td>-</td>
+<td><strong>At least first 2 required</strong> The nameserver hostnames to use</td>
+</tr>
+<tr>
+<td>ip</td>
+<td>-</td>
+<td><strong>Required if provider nameservers are used</strong> The standard IP address to create DNS zone</td>
+</tr>
+<tr>
+<td>async</td>
+<td>false</td>
+<td>Set to <code>true</code> in order to execute transfer in the background - faster response</td>
+</tr>
+</tbody></table>
+<h3 id='return-codes-9'>Return codes</h3>
+<p>This are the additional return codes for this action. The global return codes applies.</p>
+
+<table><thead>
+<tr>
+<th>Return Code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>803</td>
+<td>No domain name specified</td>
+</tr>
+<tr>
+<td>804</td>
+<td>Invalid domain name specified</td>
+</tr>
+<tr>
+<td>805</td>
+<td>TLD not supported</td>
+</tr>
+<tr>
+<td>806</td>
+<td>Domain availibility status can not be fetched</td>
+</tr>
+<tr>
+<td>807</td>
+<td>Domain is not registered, transfer not available</td>
+</tr>
+<tr>
+<td>808</td>
+<td>Not enough credit</td>
+</tr>
+<tr>
+<td>809</td>
+<td>Contact details missing (more information in <code>message</code> element)</td>
+</tr>
+<tr>
+<td>810</td>
+<td>AuthCode not specified</td>
+</tr>
+<tr>
+<td>811</td>
+<td>Nameserver missing</td>
+</tr>
+<tr>
+<td>812</td>
+<td>Invalid IP address</td>
+</tr>
+<tr>
+<td>813</td>
+<td>Domain transfer already in progress</td>
+</tr>
+<tr>
+<td>814</td>
+<td>Domain transfer failed</td>
+</tr>
+</tbody></table>
+<h2 id='edit-a-domain'>Edit a domain</h2><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+<span class="nv">$req</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="s2">"domain"</span> <span class="o">=&gt;</span> <span class="s2">"example.com"</span><span class="p">,</span>
+  <span class="s2">"owner_firstname"</span> <span class="o">=&gt;</span> <span class="s2">"John"</span><span class="p">,</span>
+  <span class="s2">"owner_lastname"</span> <span class="o">=&gt;</span> <span class="s2">"Doe"</span><span class="p">,</span>
+  <span class="s2">"owner_company"</span> <span class="o">=&gt;</span> <span class="s2">""</span><span class="p">,</span>
+  <span class="s2">"owner_street"</span> <span class="o">=&gt;</span> <span class="s2">"Example street 1"</span><span class="p">,</span>
+  <span class="s2">"owner_country"</span> <span class="o">=&gt;</span> <span class="s2">"US"</span><span class="p">,</span>
+  <span class="s2">"owner_postcode"</span> <span class="o">=&gt;</span> <span class="s2">"12345"</span><span class="p">,</span>
+  <span class="s2">"owner_city"</span> <span class="o">=&gt;</span> <span class="s2">"Example city"</span><span class="p">,</span>
+  <span class="s2">"owner_telephone"</span> <span class="o">=&gt;</span> <span class="s2">"0019289999"</span><span class="p">,</span>
+  <span class="s2">"owner_telefax"</span> <span class="o">=&gt;</span> <span class="s2">"0019289998"</span><span class="p">,</span>
+  <span class="s2">"owner_email"</span> <span class="o">=&gt;</span> <span class="s2">"john.doe@example.com"</span><span class="p">,</span>
+  <span class="s2">"admin_firstname"</span> <span class="o">=&gt;</span> <span class="s2">"John"</span><span class="p">,</span>
+  <span class="s2">"admin_lastname"</span> <span class="o">=&gt;</span> <span class="s2">"Doe"</span><span class="p">,</span>
+  <span class="s2">"admin_company"</span> <span class="o">=&gt;</span> <span class="s2">""</span><span class="p">,</span>
+  <span class="s2">"admin_street"</span> <span class="o">=&gt;</span> <span class="s2">"Example street 1"</span><span class="p">,</span>
+  <span class="s2">"admin_country"</span> <span class="o">=&gt;</span> <span class="s2">"US"</span><span class="p">,</span>
+  <span class="s2">"admin_postcode"</span> <span class="o">=&gt;</span> <span class="s2">"12345"</span><span class="p">,</span>
+  <span class="s2">"admin_city"</span> <span class="o">=&gt;</span> <span class="s2">"Example city"</span><span class="p">,</span>
+  <span class="s2">"admin_telephone"</span> <span class="o">=&gt;</span> <span class="s2">"0019289999"</span><span class="p">,</span>
+  <span class="s2">"admin_telefax"</span> <span class="o">=&gt;</span> <span class="s2">"0019289998"</span><span class="p">,</span>
+  <span class="s2">"admin_email"</span> <span class="o">=&gt;</span> <span class="s2">"john.doe@example.com"</span><span class="p">,</span>
+  <span class="s2">"tech_firstname"</span> <span class="o">=&gt;</span> <span class="s2">"John"</span><span class="p">,</span>
+  <span class="s2">"tech_lastname"</span> <span class="o">=&gt;</span> <span class="s2">"Doe"</span><span class="p">,</span>
+  <span class="s2">"tech_company"</span> <span class="o">=&gt;</span> <span class="s2">""</span><span class="p">,</span>
+  <span class="s2">"tech_street"</span> <span class="o">=&gt;</span> <span class="s2">"Example street 1"</span><span class="p">,</span>
+  <span class="s2">"tech_country"</span> <span class="o">=&gt;</span> <span class="s2">"US"</span><span class="p">,</span>
+  <span class="s2">"tech_postcode"</span> <span class="o">=&gt;</span> <span class="s2">"12345"</span><span class="p">,</span>
+  <span class="s2">"tech_city"</span> <span class="o">=&gt;</span> <span class="s2">"Example city"</span><span class="p">,</span>
+  <span class="s2">"tech_telephone"</span> <span class="o">=&gt;</span> <span class="s2">"0019289999"</span><span class="p">,</span>
+  <span class="s2">"tech_telefax"</span> <span class="o">=&gt;</span> <span class="s2">"0019289998"</span><span class="p">,</span>
+  <span class="s2">"tech_email"</span> <span class="o">=&gt;</span> <span class="s2">"john.doe@example.com"</span><span class="p">,</span>
+  <span class="s2">"zone_firstname"</span> <span class="o">=&gt;</span> <span class="s2">"John"</span><span class="p">,</span>
+  <span class="s2">"zone_lastname"</span> <span class="o">=&gt;</span> <span class="s2">"Doe"</span><span class="p">,</span>
+  <span class="s2">"zone_company"</span> <span class="o">=&gt;</span> <span class="s2">""</span><span class="p">,</span>
+  <span class="s2">"zone_street"</span> <span class="o">=&gt;</span> <span class="s2">"Example street 1"</span><span class="p">,</span>
+  <span class="s2">"zone_country"</span> <span class="o">=&gt;</span> <span class="s2">"US"</span><span class="p">,</span>
+  <span class="s2">"zone_postcode"</span> <span class="o">=&gt;</span> <span class="s2">"12345"</span><span class="p">,</span>
+  <span class="s2">"zone_city"</span> <span class="o">=&gt;</span> <span class="s2">"Example city"</span><span class="p">,</span>
+  <span class="s2">"zone_telephone"</span> <span class="o">=&gt;</span> <span class="s2">"0019289999"</span><span class="p">,</span>
+  <span class="s2">"zone_telefax"</span> <span class="o">=&gt;</span> <span class="s2">"0019289998"</span><span class="p">,</span>
+  <span class="s2">"zone_email"</span> <span class="o">=&gt;</span> <span class="s2">"john.doe@example.com"</span><span class="p">,</span>
+  <span class="s2">"ns1"</span> <span class="o">=&gt;</span> <span class="s2">"ns1.sourceway.de"</span><span class="p">,</span>
+  <span class="s2">"ns2"</span> <span class="o">=&gt;</span> <span class="s2">"ns2.sourceway.de"</span><span class="p">,</span>
+  <span class="s2">"ip"</span> <span class="o">=&gt;</span> <span class="s2">"8.8.8.8"</span>
+  <span class="s2">"transfer_lock"</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="s2">"auto_renew"</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="s2">"privacy"</span> <span class="o">=&gt;</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="s2">"async"</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
+<span class="p">];</span>
+
+<span class="nv">$ch</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">(</span><span class="s2">"https://sourceway.de/api/CUSTOMER_ID/API_KEY/domain/modify"</span><span class="p">);</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_RETURNTRANSFER</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_POSTFIELDS</span><span class="p">,</span> <span class="nb">http_build_query</span><span class="p">(</span><span class="nv">$req</span><span class="p">));</span>
+<span class="nv">$res</span> <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nb">curl_errno</span><span class="p">(</span><span class="nv">$ch</span><span class="p">))</span> <span class="p">{</span>
+  <span class="k">die</span><span class="p">(</span><span class="nb">curl_error</span><span class="p">(</span><span class="nv">$ch</span><span class="p">));</span>
+<span class="p">}</span>
+
+<span class="nb">curl_close</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span>
+<span class="nv">$res</span> <span class="o">=</span> <span class="nb">json_decode</span><span class="p">(</span><span class="nv">$res</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+
+<span class="nb">print_r</span><span class="p">(</span><span class="nv">$res</span><span class="p">);</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://sourceway.de/api/CUSTOMER_ID/API_KEY/domain/modify?domain=example.com&amp;owner_firstname=John&amp;owner_lastname=Doe&amp;owner_company=&amp;owner_street=Example+street+1&amp;owner_country=US&amp;owner_postcode=12345&amp;owner_city=Example+city&amp;owner_telephone=0019289999&amp;owner_telefax=0019289998&amp;owner_email=john.doe%40example.com&amp;admin_firstname=John&amp;admin_lastname=Doe&amp;admin_company=&amp;admin_street=Example+street+1&amp;admin_country=US&amp;admin_postcode=12345&amp;admin_city=Example+city&amp;admin_telephone=0019289999&amp;admin_telefax=0019289998&amp;admin_email=john.doe%40example.com&amp;tech_firstname=John&amp;tech_lastname=Doe&amp;tech_company=&amp;tech_street=Example+street+1&amp;tech_country=US&amp;tech_postcode=12345&amp;tech_city=Example+city&amp;tech_telephone=0019289999&amp;tech_telefax=0019289998&amp;tech_email=john.doe%40example.com&amp;zone_firstname=John&amp;zone_lastname=Doe&amp;zone_company=&amp;zone_street=Example+street+1&amp;zone_country=US&amp;zone_postcode=12345&amp;zone_city=Example+city&amp;zone_telephone=0019289999&amp;zone_telefax=0019289998&amp;zone_email=john.doe%40example.com&amp;ns1=ns1.sourceway.de&amp;ns2=ns2.sourceway.de&amp;ip=8.8.8.8&amp;transfer_lock=1&amp;auto_renew=1&amp;privacy=0&amp;async=1"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Domain updated."</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Using this endpoint, you can modify an existing domain.</p>
+<h3 id='api-endpoint-10'>API endpoint</h3>
+<p><code>/domain/modify</code></p>
+<h3 id='query-parameters-10'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>domain</td>
+<td>-</td>
+<td><strong>Required</strong> The domain to edit</td>
+</tr>
+<tr>
+<td>owner_*</td>
+<td>-</td>
+<td><strong>Required</strong> The owner contact data - see request for details</td>
+</tr>
+<tr>
+<td>admin_*</td>
+<td>-</td>
+<td><strong>Required</strong> The admin contact data - see request for details</td>
+</tr>
+<tr>
+<td>tech_*</td>
+<td>Provider data</td>
+<td>The tech contact data - needs special permission</td>
+</tr>
+<tr>
+<td>zone_*</td>
+<td>Provider data</td>
+<td>The zone contact data - needs special permission</td>
+</tr>
+<tr>
+<td>ns1..5</td>
+<td>-</td>
+<td><strong>At least first 2 required</strong> The nameserver hostnames to use</td>
+</tr>
+<tr>
+<td>ip</td>
+<td>-</td>
+<td><strong>Required if switching to provider nameservers</strong> The standard IP address to create DNS zone</td>
+</tr>
+<tr>
+<td>transfer_lock</td>
+<td>false</td>
+<td>Set the transfer lock status (if supported by TLD)</td>
+</tr>
+<tr>
+<td>auto_renew</td>
+<td>false</td>
+<td>Set the auto renew status</td>
+</tr>
+<tr>
+<td>privacy</td>
+<td>false</td>
+<td>Set the WHOIS privacy status (if supported by TLD, can be chargeable)</td>
+</tr>
+<tr>
+<td>async</td>
+<td>false</td>
+<td>Set to <code>true</code> in order to execute modification in the background - faster response</td>
+</tr>
+</tbody></table>
+<h3 id='return-codes-10'>Return codes</h3>
+<p>This are the additional return codes for this action. The global return codes applies.</p>
+
+<table><thead>
+<tr>
+<th>Return Code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>803</td>
+<td>Domain not found</td>
+</tr>
+<tr>
+<td>804</td>
+<td>Internal error</td>
+</tr>
+<tr>
+<td>805</td>
+<td>Contact details missing (more information in <code>message</code> element)</td>
+</tr>
+<tr>
+<td>806</td>
+<td>Nameserver missing</td>
+</tr>
+<tr>
+<td>807</td>
+<td>Missing credit for auto renew</td>
+</tr>
+<tr>
+<td>808</td>
+<td>Invalid IP address</td>
+</tr>
+<tr>
+<td>809</td>
+<td>Domain update failed</td>
+</tr>
+</tbody></table>
+<h2 id='change-domain-owner-trade'>Change domain owner (trade)</h2><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+<span class="nv">$req</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="s2">"domain"</span> <span class="o">=&gt;</span> <span class="s2">"example.com"</span><span class="p">,</span>
+  <span class="s2">"owner_firstname"</span> <span class="o">=&gt;</span> <span class="s2">"John"</span><span class="p">,</span>
+  <span class="s2">"owner_lastname"</span> <span class="o">=&gt;</span> <span class="s2">"Doe"</span><span class="p">,</span>
+  <span class="s2">"owner_company"</span> <span class="o">=&gt;</span> <span class="s2">""</span><span class="p">,</span>
+  <span class="s2">"owner_street"</span> <span class="o">=&gt;</span> <span class="s2">"Example street 1"</span><span class="p">,</span>
+  <span class="s2">"owner_country"</span> <span class="o">=&gt;</span> <span class="s2">"US"</span><span class="p">,</span>
+  <span class="s2">"owner_postcode"</span> <span class="o">=&gt;</span> <span class="s2">"12345"</span><span class="p">,</span>
+  <span class="s2">"owner_city"</span> <span class="o">=&gt;</span> <span class="s2">"Example city"</span><span class="p">,</span>
+  <span class="s2">"owner_telephone"</span> <span class="o">=&gt;</span> <span class="s2">"0019289999"</span><span class="p">,</span>
+  <span class="s2">"owner_telefax"</span> <span class="o">=&gt;</span> <span class="s2">"0019289998"</span><span class="p">,</span>
+  <span class="s2">"owner_email"</span> <span class="o">=&gt;</span> <span class="s2">"john.doe@example.com"</span><span class="p">,</span>
+  <span class="s2">"admin_firstname"</span> <span class="o">=&gt;</span> <span class="s2">"John"</span><span class="p">,</span>
+  <span class="s2">"admin_lastname"</span> <span class="o">=&gt;</span> <span class="s2">"Doe"</span><span class="p">,</span>
+  <span class="s2">"admin_company"</span> <span class="o">=&gt;</span> <span class="s2">""</span><span class="p">,</span>
+  <span class="s2">"admin_street"</span> <span class="o">=&gt;</span> <span class="s2">"Example street 1"</span><span class="p">,</span>
+  <span class="s2">"admin_country"</span> <span class="o">=&gt;</span> <span class="s2">"US"</span><span class="p">,</span>
+  <span class="s2">"admin_postcode"</span> <span class="o">=&gt;</span> <span class="s2">"12345"</span><span class="p">,</span>
+  <span class="s2">"admin_city"</span> <span class="o">=&gt;</span> <span class="s2">"Example city"</span><span class="p">,</span>
+  <span class="s2">"admin_telephone"</span> <span class="o">=&gt;</span> <span class="s2">"0019289999"</span><span class="p">,</span>
+  <span class="s2">"admin_telefax"</span> <span class="o">=&gt;</span> <span class="s2">"0019289998"</span><span class="p">,</span>
+  <span class="s2">"admin_email"</span> <span class="o">=&gt;</span> <span class="s2">"john.doe@example.com"</span><span class="p">,</span>
+  <span class="s2">"tech_firstname"</span> <span class="o">=&gt;</span> <span class="s2">"John"</span><span class="p">,</span>
+  <span class="s2">"tech_lastname"</span> <span class="o">=&gt;</span> <span class="s2">"Doe"</span><span class="p">,</span>
+  <span class="s2">"tech_company"</span> <span class="o">=&gt;</span> <span class="s2">""</span><span class="p">,</span>
+  <span class="s2">"tech_street"</span> <span class="o">=&gt;</span> <span class="s2">"Example street 1"</span><span class="p">,</span>
+  <span class="s2">"tech_country"</span> <span class="o">=&gt;</span> <span class="s2">"US"</span><span class="p">,</span>
+  <span class="s2">"tech_postcode"</span> <span class="o">=&gt;</span> <span class="s2">"12345"</span><span class="p">,</span>
+  <span class="s2">"tech_city"</span> <span class="o">=&gt;</span> <span class="s2">"Example city"</span><span class="p">,</span>
+  <span class="s2">"tech_telephone"</span> <span class="o">=&gt;</span> <span class="s2">"0019289999"</span><span class="p">,</span>
+  <span class="s2">"tech_telefax"</span> <span class="o">=&gt;</span> <span class="s2">"0019289998"</span><span class="p">,</span>
+  <span class="s2">"tech_email"</span> <span class="o">=&gt;</span> <span class="s2">"john.doe@example.com"</span><span class="p">,</span>
+  <span class="s2">"zone_firstname"</span> <span class="o">=&gt;</span> <span class="s2">"John"</span><span class="p">,</span>
+  <span class="s2">"zone_lastname"</span> <span class="o">=&gt;</span> <span class="s2">"Doe"</span><span class="p">,</span>
+  <span class="s2">"zone_company"</span> <span class="o">=&gt;</span> <span class="s2">""</span><span class="p">,</span>
+  <span class="s2">"zone_street"</span> <span class="o">=&gt;</span> <span class="s2">"Example street 1"</span><span class="p">,</span>
+  <span class="s2">"zone_country"</span> <span class="o">=&gt;</span> <span class="s2">"US"</span><span class="p">,</span>
+  <span class="s2">"zone_postcode"</span> <span class="o">=&gt;</span> <span class="s2">"12345"</span><span class="p">,</span>
+  <span class="s2">"zone_city"</span> <span class="o">=&gt;</span> <span class="s2">"Example city"</span><span class="p">,</span>
+  <span class="s2">"zone_telephone"</span> <span class="o">=&gt;</span> <span class="s2">"0019289999"</span><span class="p">,</span>
+  <span class="s2">"zone_telefax"</span> <span class="o">=&gt;</span> <span class="s2">"0019289998"</span><span class="p">,</span>
+  <span class="s2">"zone_email"</span> <span class="o">=&gt;</span> <span class="s2">"john.doe@example.com"</span><span class="p">,</span>
+  <span class="s2">"async"</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
+<span class="p">];</span>
+
+<span class="nv">$ch</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">(</span><span class="s2">"https://sourceway.de/api/CUSTOMER_ID/API_KEY/domain/trade"</span><span class="p">);</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_RETURNTRANSFER</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_POSTFIELDS</span><span class="p">,</span> <span class="nb">http_build_query</span><span class="p">(</span><span class="nv">$req</span><span class="p">));</span>
+<span class="nv">$res</span> <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nb">curl_errno</span><span class="p">(</span><span class="nv">$ch</span><span class="p">))</span> <span class="p">{</span>
+  <span class="k">die</span><span class="p">(</span><span class="nb">curl_error</span><span class="p">(</span><span class="nv">$ch</span><span class="p">));</span>
+<span class="p">}</span>
+
+<span class="nb">curl_close</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span>
+<span class="nv">$res</span> <span class="o">=</span> <span class="nb">json_decode</span><span class="p">(</span><span class="nv">$res</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+
+<span class="nb">print_r</span><span class="p">(</span><span class="nv">$res</span><span class="p">);</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://sourceway.de/api/CUSTOMER_ID/API_KEY/domain/trade?domain=example.com&amp;owner_firstname=John&amp;owner_lastname=Doe&amp;owner_company=&amp;owner_street=Example+street+1&amp;owner_country=US&amp;owner_postcode=12345&amp;owner_city=Example+city&amp;owner_telephone=0019289999&amp;owner_telefax=0019289998&amp;owner_email=john.doe%40example.com&amp;admin_firstname=John&amp;admin_lastname=Doe&amp;admin_company=&amp;admin_street=Example+street+1&amp;admin_country=US&amp;admin_postcode=12345&amp;admin_city=Example+city&amp;admin_telephone=0019289999&amp;admin_telefax=0019289998&amp;admin_email=john.doe%40example.com&amp;tech_firstname=John&amp;tech_lastname=Doe&amp;tech_company=&amp;tech_street=Example+street+1&amp;tech_country=US&amp;tech_postcode=12345&amp;tech_city=Example+city&amp;tech_telephone=0019289999&amp;tech_telefax=0019289998&amp;tech_email=john.doe%40example.com&amp;zone_firstname=John&amp;zone_lastname=Doe&amp;zone_company=&amp;zone_street=Example+street+1&amp;zone_country=US&amp;zone_postcode=12345&amp;zone_city=Example+city&amp;zone_telephone=0019289999&amp;zone_telefax=0019289998&amp;zone_email=john.doe%40example.com&amp;async=1"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Trade successful."</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Using this endpoint, you can execute a domain owner change (trade). This is a chargeable action required if you want to change the domain owner data for a TLD with chargeable domain owner change. You are not able to change the domain owner via the <code>domain/modify</code> endpoint in this case.</p>
+<h3 id='api-endpoint-11'>API endpoint</h3>
+<p><code>/domain/trade</code></p>
+<h3 id='query-parameters-11'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>domain</td>
+<td>-</td>
+<td><strong>Required</strong> The domain to execute the trade for</td>
+</tr>
+<tr>
+<td>owner_*</td>
+<td>-</td>
+<td><strong>Required</strong> The owner contact data - see request for details</td>
+</tr>
+<tr>
+<td>admin_*</td>
+<td>-</td>
+<td><strong>Required</strong> The admin contact data - see request for details</td>
+</tr>
+<tr>
+<td>tech_*</td>
+<td>Provider data</td>
+<td>The tech contact data - needs special permission</td>
+</tr>
+<tr>
+<td>zone_*</td>
+<td>Provider data</td>
+<td>The zone contact data - needs special permission</td>
+</tr>
+<tr>
+<td>async</td>
+<td>false</td>
+<td>Set to <code>true</code> in order to execute trade in the background - faster response</td>
+</tr>
+</tbody></table>
+<h3 id='return-codes-11'>Return codes</h3>
+<p>This are the additional return codes for this action. The global return codes applies.</p>
+
+<table><thead>
+<tr>
+<th>Return Code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>803</td>
+<td>Domain not found</td>
+</tr>
+<tr>
+<td>804</td>
+<td>Internal error</td>
+</tr>
+<tr>
+<td>805</td>
+<td>Contact details missing (more information in <code>message</code> element)</td>
+</tr>
+<tr>
+<td>806</td>
+<td>Trade not possible for this TLD</td>
+</tr>
+<tr>
+<td>807</td>
+<td>Not enough credit</td>
+</tr>
+<tr>
+<td>808</td>
+<td>Trade failed</td>
+</tr>
+</tbody></table>
+<h2 id='request-authcode'>Request authcode</h2><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+<span class="nv">$req</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="s2">"domain"</span> <span class="o">=&gt;</span> <span class="s2">"example.com"</span><span class="p">,</span>
+<span class="p">];</span>
+
+<span class="nv">$ch</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">(</span><span class="s2">"https://sourceway.de/api/CUSTOMER_ID/API_KEY/domain/password"</span><span class="p">);</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_RETURNTRANSFER</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_POSTFIELDS</span><span class="p">,</span> <span class="nb">http_build_query</span><span class="p">(</span><span class="nv">$req</span><span class="p">));</span>
+<span class="nv">$res</span> <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nb">curl_errno</span><span class="p">(</span><span class="nv">$ch</span><span class="p">))</span> <span class="p">{</span>
+  <span class="k">die</span><span class="p">(</span><span class="nb">curl_error</span><span class="p">(</span><span class="nv">$ch</span><span class="p">));</span>
+<span class="p">}</span>
+
+<span class="nb">curl_close</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span>
+<span class="nv">$res</span> <span class="o">=</span> <span class="nb">json_decode</span><span class="p">(</span><span class="nv">$res</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+
+<span class="nb">print_r</span><span class="p">(</span><span class="nv">$res</span><span class="p">);</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://sourceway.de/api/CUSTOMER_ID/API_KEY/domain/password?domain=example.com"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Authcode fetched."</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"q1w2e3r4t5"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Using this endpoint, you can request the authcode for your domain.</p>
+<h3 id='api-endpoint-12'>API endpoint</h3>
+<p><code>/domain/password</code></p>
+<h3 id='query-parameters-12'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>domain</td>
+<td>-</td>
+<td><strong>Required</strong> The domain to request the authcode for</td>
+</tr>
+</tbody></table>
+<h3 id='return-codes-12'>Return codes</h3>
+<p>This are the additional return codes for this action. The global return codes applies.</p>
+
+<table><thead>
+<tr>
+<th>Return Code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>803</td>
+<td>Domain not found</td>
+</tr>
+<tr>
+<td>804</td>
+<td>Internal error</td>
+</tr>
+</tbody></table>
+<h2 id='delete-return-a-domain'>Delete/return a domain</h2><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+<span class="nv">$req</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="s2">"domain"</span> <span class="o">=&gt;</span> <span class="s2">"example.com"</span><span class="p">,</span>
+  <span class="s2">"type"</span> <span class="o">=&gt;</span> <span class="s2">"0"</span><span class="p">,</span>
+<span class="p">];</span>
+
+<span class="nv">$ch</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">(</span><span class="s2">"https://sourceway.de/api/CUSTOMER_ID/API_KEY/domain/delete"</span><span class="p">);</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_RETURNTRANSFER</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_POSTFIELDS</span><span class="p">,</span> <span class="nb">http_build_query</span><span class="p">(</span><span class="nv">$req</span><span class="p">));</span>
+<span class="nv">$res</span> <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nb">curl_errno</span><span class="p">(</span><span class="nv">$ch</span><span class="p">))</span> <span class="p">{</span>
+  <span class="k">die</span><span class="p">(</span><span class="nb">curl_error</span><span class="p">(</span><span class="nv">$ch</span><span class="p">));</span>
+<span class="p">}</span>
+
+<span class="nb">curl_close</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span>
+<span class="nv">$res</span> <span class="o">=</span> <span class="nb">json_decode</span><span class="p">(</span><span class="nv">$res</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+
+<span class="nb">print_r</span><span class="p">(</span><span class="nv">$res</span><span class="p">);</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://sourceway.de/api/CUSTOMER_ID/API_KEY/domain/delete?domain=example.com&amp;type=0"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Domain deleted/returned to registry."</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Using this endpoint, you can delete a domain or return it to registry.</p>
+<h3 id='api-endpoint-13'>API endpoint</h3>
+<p><code>/domain/delete</code></p>
+<h3 id='query-parameters-13'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>domain</td>
+<td>-</td>
+<td><strong>Required</strong> The domain to request the authcode for</td>
+</tr>
+<tr>
+<td>type</td>
+<td>-</td>
+<td><strong>Required</strong> The type of deletion (0 = normal delete, 1 = connected return, 2 = disconnected return)</td>
+</tr>
+</tbody></table>
+<h3 id='return-codes-13'>Return codes</h3>
+<p>This are the additional return codes for this action. The global return codes applies.</p>
+
+<table><thead>
+<tr>
+<th>Return Code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>803</td>
+<td>Domain not found</td>
+</tr>
+<tr>
+<td>804</td>
+<td>Internal error</td>
+</tr>
+<tr>
+<td>805</td>
+<td>Invalid type specified</td>
+</tr>
+<tr>
+<td>806</td>
+<td>Deletion/Returnation failed</td>
+</tr>
+</tbody></table>
+<h1 id='dns-zones'>DNS zones</h1><h2 id='list-your-zones'>List your zones</h2><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+<span class="nv">$req</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="s2">"domain"</span> <span class="o">=&gt;</span> <span class="s2">"example.com"</span><span class="p">,</span>
+<span class="p">];</span>
+
+<span class="nv">$ch</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">(</span><span class="s2">"https://sourceway.de/api/CUSTOMER_ID/API_KEY/dns/list"</span><span class="p">);</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_RETURNTRANSFER</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_POSTFIELDS</span><span class="p">,</span> <span class="nb">http_build_query</span><span class="p">(</span><span class="nv">$req</span><span class="p">));</span>
+<span class="nv">$res</span> <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nb">curl_errno</span><span class="p">(</span><span class="nv">$ch</span><span class="p">))</span> <span class="p">{</span>
+  <span class="k">die</span><span class="p">(</span><span class="nb">curl_error</span><span class="p">(</span><span class="nv">$ch</span><span class="p">));</span>
+<span class="p">}</span>
+
+<span class="nb">curl_close</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span>
+<span class="nv">$res</span> <span class="o">=</span> <span class="nb">json_decode</span><span class="p">(</span><span class="nv">$res</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+
+<span class="nb">print_r</span><span class="p">(</span><span class="nv">$res</span><span class="p">);</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://sourceway.de/api/CUSTOMER_ID/API_KEY/dns/list?domain=example.com"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Zones fetched."</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"example.com"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"example.de"</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Using this endpoint, you can get all DNS zones existing for domains using the nameservers of the provider.</p>
+<h3 id='api-endpoint-14'>API endpoint</h3>
+<p><code>/dns/list</code></p>
+<h3 id='query-parameters-14'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>domain</td>
+<td>-</td>
+<td>Filter by domain (wildcard)</td>
+</tr>
+</tbody></table>
+<h3 id='return-codes-14'>Return codes</h3>
+<p>The global return codes applies.</p>
+<h2 id='get-zone-records'>Get zone records</h2><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+<span class="nv">$req</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="s2">"domain"</span> <span class="o">=&gt;</span> <span class="s2">"example.com"</span>
+<span class="p">];</span>
+
+<span class="nv">$ch</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">(</span><span class="s2">"https://sourceway.de/api/CUSTOMER_ID/API_KEY/dns/show"</span><span class="p">);</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_RETURNTRANSFER</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_POSTFIELDS</span><span class="p">,</span> <span class="nb">http_build_query</span><span class="p">(</span><span class="nv">$req</span><span class="p">));</span>
+<span class="nv">$res</span> <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nb">curl_errno</span><span class="p">(</span><span class="nv">$ch</span><span class="p">))</span> <span class="p">{</span>
+  <span class="k">die</span><span class="p">(</span><span class="nb">curl_error</span><span class="p">(</span><span class="nv">$ch</span><span class="p">));</span>
+<span class="p">}</span>
+
+<span class="nb">curl_close</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span>
+<span class="nv">$res</span> <span class="o">=</span> <span class="nb">json_decode</span><span class="p">(</span><span class="nv">$res</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+
+<span class="nb">print_r</span><span class="p">(</span><span class="nv">$res</span><span class="p">);</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://sourceway.de/api/CUSTOMER_ID/API_KEY/dns/show?domain=example.com"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Zone fetched."</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"262"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8.8.8.8"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"ttl"</span><span class="p">:</span><span class="w"> </span><span class="mi">3600</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"priority"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"263"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MX"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example.com"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"ttl"</span><span class="p">:</span><span class="w"> </span><span class="mi">3600</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"priority"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Using this endpoint, you can get all records existing in the specified DNS zone.</p>
+<h3 id='api-endpoint-15'>API endpoint</h3>
+<p><code>/dns/show</code></p>
+<h3 id='query-parameters-15'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>domain</td>
+<td>-</td>
+<td><strong>Required</strong> The domain/zone name you want to get</td>
+</tr>
+</tbody></table>
+<h3 id='return-codes-15'>Return codes</h3>
+<p>This are the additional return codes for this action. The global return codes applies.</p>
+
+<table><thead>
+<tr>
+<th>Return Code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>803</td>
+<td>Domain not found</td>
+</tr>
+<tr>
+<td>804</td>
+<td>Zone not found</td>
+</tr>
+</tbody></table>
+<h2 id='add-a-record'>Add a record</h2><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+<span class="nv">$req</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="s2">"domain"</span> <span class="o">=&gt;</span> <span class="s2">"example.com"</span><span class="p">,</span>
+  <span class="s2">"name"</span> <span class="o">=&gt;</span> <span class="s2">"www"</span><span class="p">,</span>
+  <span class="s2">"type"</span> <span class="o">=&gt;</span> <span class="s2">"A"</span><span class="p">,</span>
+  <span class="s2">"content"</span> <span class="o">=&gt;</span> <span class="s2">"8.8.8.8"</span><span class="p">,</span>
+  <span class="s2">"ttl"</span> <span class="o">=&gt;</span> <span class="s2">"3600"</span><span class="p">,</span>
+  <span class="s2">"priority"</span> <span class="o">=&gt;</span> <span class="s2">"0"</span><span class="p">,</span>
+<span class="p">];</span>
+
+<span class="nv">$ch</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">(</span><span class="s2">"https://sourceway.de/api/CUSTOMER_ID/API_KEY/dns/add"</span><span class="p">);</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_RETURNTRANSFER</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_POSTFIELDS</span><span class="p">,</span> <span class="nb">http_build_query</span><span class="p">(</span><span class="nv">$req</span><span class="p">));</span>
+<span class="nv">$res</span> <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nb">curl_errno</span><span class="p">(</span><span class="nv">$ch</span><span class="p">))</span> <span class="p">{</span>
+  <span class="k">die</span><span class="p">(</span><span class="nb">curl_error</span><span class="p">(</span><span class="nv">$ch</span><span class="p">));</span>
+<span class="p">}</span>
+
+<span class="nb">curl_close</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span>
+<span class="nv">$res</span> <span class="o">=</span> <span class="nb">json_decode</span><span class="p">(</span><span class="nv">$res</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+
+<span class="nb">print_r</span><span class="p">(</span><span class="nv">$res</span><span class="p">);</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://sourceway.de/api/CUSTOMER_ID/API_KEY/dns/add?domain=example.com&amp;name=www&amp;type=A&amp;content=8.8.8.8&amp;ttl=3600&amp;priority=0"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Record added."</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Using this endpoint, you can create a new record in a DNS zone.</p>
+<h3 id='api-endpoint-16'>API endpoint</h3>
+<p><code>/dns/add</code></p>
+<h3 id='query-parameters-16'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>domain</td>
+<td>-</td>
+<td><strong>Required</strong> The domain/zone name you want to add a record in</td>
+</tr>
+<tr>
+<td>name</td>
+<td>-</td>
+<td><strong>Required</strong> The record name (can be empty)</td>
+</tr>
+<tr>
+<td>type</td>
+<td>-</td>
+<td><strong>Required</strong> The record type</td>
+</tr>
+<tr>
+<td>content</td>
+<td>-</td>
+<td><strong>Required</strong> The content of the record</td>
+</tr>
+<tr>
+<td>ttl</td>
+<td>-</td>
+<td><strong>Required</strong> Time-to-live (e.g. 3600)</td>
+</tr>
+<tr>
+<td>priority</td>
+<td>-</td>
+<td><strong>Required</strong> Priority (can be 0)</td>
+</tr>
+</tbody></table>
+<h3 id='return-codes-16'>Return codes</h3>
+<p>This are the additional return codes for this action. The global return codes applies.</p>
+
+<table><thead>
+<tr>
+<th>Return Code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>803</td>
+<td>Domain not found</td>
+</tr>
+<tr>
+<td>804</td>
+<td>Zone not found</td>
+</tr>
+<tr>
+<td>805</td>
+<td>Error at adding record (invalid record data)</td>
+</tr>
+</tbody></table>
+<h2 id='edit-a-record'>Edit a record</h2><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+<span class="nv">$req</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="s2">"domain"</span> <span class="o">=&gt;</span> <span class="s2">"example.com"</span><span class="p">,</span>
+  <span class="s2">"record"</span> <span class="o">=&gt;</span> <span class="s2">"262"</span><span class="p">,</span>
+  <span class="s2">"name"</span> <span class="o">=&gt;</span> <span class="s2">"www"</span><span class="p">,</span>
+  <span class="s2">"type"</span> <span class="o">=&gt;</span> <span class="s2">"A"</span><span class="p">,</span>
+  <span class="s2">"content"</span> <span class="o">=&gt;</span> <span class="s2">"8.8.8.8"</span><span class="p">,</span>
+  <span class="s2">"ttl"</span> <span class="o">=&gt;</span> <span class="s2">"3600"</span><span class="p">,</span>
+  <span class="s2">"priority"</span> <span class="o">=&gt;</span> <span class="s2">"0"</span><span class="p">,</span>
+<span class="p">];</span>
+
+<span class="nv">$ch</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">(</span><span class="s2">"https://sourceway.de/api/CUSTOMER_ID/API_KEY/dns/edit"</span><span class="p">);</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_RETURNTRANSFER</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_POSTFIELDS</span><span class="p">,</span> <span class="nb">http_build_query</span><span class="p">(</span><span class="nv">$req</span><span class="p">));</span>
+<span class="nv">$res</span> <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nb">curl_errno</span><span class="p">(</span><span class="nv">$ch</span><span class="p">))</span> <span class="p">{</span>
+  <span class="k">die</span><span class="p">(</span><span class="nb">curl_error</span><span class="p">(</span><span class="nv">$ch</span><span class="p">));</span>
+<span class="p">}</span>
+
+<span class="nb">curl_close</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span>
+<span class="nv">$res</span> <span class="o">=</span> <span class="nb">json_decode</span><span class="p">(</span><span class="nv">$res</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+
+<span class="nb">print_r</span><span class="p">(</span><span class="nv">$res</span><span class="p">);</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://sourceway.de/api/CUSTOMER_ID/API_KEY/dns/edit?domain=example.com&amp;record=262&amp;name=www&amp;type=A&amp;content=8.8.8.8&amp;ttl=3600&amp;priority=0"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Record edited."</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Using this endpoint, you can edit an existing record in a DNS zone.</p>
+<h3 id='api-endpoint-17'>API endpoint</h3>
+<p><code>/dns/edit</code></p>
+<h3 id='query-parameters-17'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>domain</td>
+<td>-</td>
+<td><strong>Required</strong> The domain/zone name you want to edit a record in</td>
+</tr>
+<tr>
+<td>record</td>
+<td>-</td>
+<td><strong>Required</strong> The ID of the record to be edited (find in <code>dns/show</code> as key)</td>
+</tr>
+<tr>
+<td>name</td>
+<td>-</td>
+<td><strong>Required</strong> The record name (can be empty)</td>
+</tr>
+<tr>
+<td>type</td>
+<td>-</td>
+<td><strong>Required</strong> The record type</td>
+</tr>
+<tr>
+<td>content</td>
+<td>-</td>
+<td><strong>Required</strong> The content of the record</td>
+</tr>
+<tr>
+<td>ttl</td>
+<td>-</td>
+<td><strong>Required</strong> Time-to-live (e.g. 3600)</td>
+</tr>
+<tr>
+<td>priority</td>
+<td>-</td>
+<td><strong>Required</strong> Priority (can be 0)</td>
+</tr>
+</tbody></table>
+<h3 id='return-codes-17'>Return codes</h3>
+<p>This are the additional return codes for this action. The global return codes applies.</p>
+
+<table><thead>
+<tr>
+<th>Return Code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>803</td>
+<td>Domain not found</td>
+</tr>
+<tr>
+<td>804</td>
+<td>Zone not found</td>
+</tr>
+<tr>
+<td>805</td>
+<td>No valid record ID specified</td>
+</tr>
+<tr>
+<td>806</td>
+<td>Record not found</td>
+</tr>
+<tr>
+<td>807</td>
+<td>Error at editing record (invalid record data)</td>
+</tr>
+</tbody></table>
+<h2 id='delete-a-record'>Delete a record</h2><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+<span class="nv">$req</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="s2">"domain"</span> <span class="o">=&gt;</span> <span class="s2">"example.com"</span><span class="p">,</span>
+  <span class="s2">"record"</span> <span class="o">=&gt;</span> <span class="s2">"262"</span><span class="p">,</span>
+<span class="p">];</span>
+
+<span class="nv">$ch</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">(</span><span class="s2">"https://sourceway.de/api/CUSTOMER_ID/API_KEY/dns/delete"</span><span class="p">);</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_RETURNTRANSFER</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_POSTFIELDS</span><span class="p">,</span> <span class="nb">http_build_query</span><span class="p">(</span><span class="nv">$req</span><span class="p">));</span>
+<span class="nv">$res</span> <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nb">curl_errno</span><span class="p">(</span><span class="nv">$ch</span><span class="p">))</span> <span class="p">{</span>
+  <span class="k">die</span><span class="p">(</span><span class="nb">curl_error</span><span class="p">(</span><span class="nv">$ch</span><span class="p">));</span>
+<span class="p">}</span>
+
+<span class="nb">curl_close</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span>
+<span class="nv">$res</span> <span class="o">=</span> <span class="nb">json_decode</span><span class="p">(</span><span class="nv">$res</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+
+<span class="nb">print_r</span><span class="p">(</span><span class="nv">$res</span><span class="p">);</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://sourceway.de/api/CUSTOMER_ID/API_KEY/dns/delete?domain=example.com&amp;record=262"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Record deleted."</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Using this endpoint, you can delete an existing record from a DNS zone.</p>
+<h3 id='api-endpoint-18'>API endpoint</h3>
+<p><code>/dns/delete</code></p>
+<h3 id='query-parameters-18'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>domain</td>
+<td>-</td>
+<td><strong>Required</strong> The domain/zone name you want to delete a record in</td>
+</tr>
+<tr>
+<td>record</td>
+<td>-</td>
+<td><strong>Required</strong> The ID of the record to be deleted (find in <code>dns/show</code> as key)</td>
+</tr>
+</tbody></table>
+<h3 id='return-codes-18'>Return codes</h3>
+<p>This are the additional return codes for this action. The global return codes applies.</p>
+
+<table><thead>
+<tr>
+<th>Return Code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>803</td>
+<td>Domain not found</td>
+</tr>
+<tr>
+<td>804</td>
+<td>Zone not found</td>
+</tr>
+<tr>
+<td>805</td>
+<td>No valid record ID specified</td>
+</tr>
+<tr>
+<td>806</td>
+<td>Record not found</td>
+</tr>
+</tbody></table>
+<h1 id='return-codes-19'>Return codes</h1>
+<p>The sourceDESK API uses the following return codes, they are contained in the <code>code</code> element in the JSON response:</p>
+
+<table><thead>
+<tr>
+<th>Return Code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>100</td>
+<td>Request was successful</td>
+</tr>
+<tr>
+<td>800</td>
+<td>Authorization failed, please check customer ID and API key</td>
+</tr>
+<tr>
+<td>801</td>
+<td>Method unknown</td>
+</tr>
+<tr>
+<td>802</td>
+<td>Action unknown</td>
+</tr>
+</tbody></table>
+
+<p>There are additional return codes in failure case for each action, please see the corresponding documentation.</p>
+
+<aside class="notice">
+The response also contains the <code>message</code> element, which contains a textual description of the error code and more error details.
+</aside>
 
       </div>
       <div class="dark-box">
           <div class="lang-selector">
                 <a href="#" data-language-name="shell">shell</a>
-                <a href="#" data-language-name="ruby">ruby</a>
-                <a href="#" data-language-name="python">python</a>
-                <a href="#" data-language-name="javascript">javascript</a>
+                <a href="#" data-language-name="php">php</a>
           </div>
       </div>
     </div>
